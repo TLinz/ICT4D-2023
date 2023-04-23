@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" application="http://webhosting.voxeo.net/208890/www/root.vxml">
+    <property name="inputmodes" value="dtmf"/> <!-- set input to DTMF-->
+
+    <catch event="choice_voted"> 
+        <prompt>.</prompt>
+        <assign name="poll" expr="_message"/>
+        <goto next="#details"/>
+    </catch>
+
+    <!-- main menu -->
+    <menu id="confirm" scope="dialog" dtmf="true">
+        <prompt>
+            To vote for "YES", Press 1
+            <break time="1000"/>
+            To vote for "NO", Press 2
+            <break time="1000"/>
+            To return the previous page, please press 0.
+            <break time="500"/>
+            To end the call, Please press the asterisk key.
+        </prompt>
+
+        <choice dtmf="1" event="choice_voted" message="YES"></choice> <!--submit polls--> 
+        <choice dtmf="2" event="choice_voted" message="No"></choice>
+        <choice dtmf="0" next="http://webhosting.voxeo.net/208890/www/menu_b.xml"></choice> <!--back to main page-->
+        <choice dtmf="*" event="end"></choice>
+    </menu>
+
+    <form id="details">
+        <block>
+            <prompt>
+                You have voted for <value expr="poll"/>.
+            </prompt>
+            <goto next="#submit_form"/>
+        </block>
+    </form>
+
+    <form id="submit_form">
+        <block>
+            <prompt> Thanks for voting. Bye. </prompt>
+            <break time="1000"/>
+        </block>
+    </form>
+
+
+</vxml>
