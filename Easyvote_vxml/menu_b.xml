@@ -12,15 +12,12 @@
             <break time="500"/>
             To vote, please press 1.
             <break time="1000"/>
-            To check the vote count, please press 2.
-            <break time="1000"/>
             To return the previous page, please press 0.
             <break time="1000"/>
             To end the call, please press the asterisk key.
 
         </prompt>
         <choice dtmf="1" next="http://webhosting.voxeo.net/208890/www/vote_b.xml"/>
-        <choice dtmf="2" next="http://webhosting.voxeo.net/208890/www/result_b.xml"/>
         <choice dtmf="0" next="http://webhosting.voxeo.net/208890/www/main_menu.xml"/>
         <choice dtmf="*" event="end"/>
     </menu>

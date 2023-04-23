@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vxml version="2.0" application="http://webhosting.voxeo.net/208890/www/root.vxml">
+<vxml version="2.0" >
     <property name="inputmodes" value="dtmf"/> <!-- set input to DTMF-->
 
     <catch event="choice_voted"> 
