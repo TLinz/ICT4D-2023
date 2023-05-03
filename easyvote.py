@@ -1,12 +1,14 @@
+#Author Leo
+
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-# 定义全局变量以存储投票结果
+# Define global variables to store poll results. A simple application interface that does not yet read telephone polling data.
 yes_votes = 0
 no_votes = 0
 poll_data = []
 
-# 定义界面
+# Defining the interface
 root = tk.Tk()
 root.title("EasyVote")
 root.geometry("800x600")
