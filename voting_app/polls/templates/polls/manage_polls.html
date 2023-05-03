@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}Manage Polls{% endblock %}
+
+{% block content %}
+    <h1>Manage Polls</h1>
+    <a href="{% url 'create_poll' %}">Create Poll</a>
+    <ul>
+        {% for poll in polls %}
+            <li>
+                {{ poll.question }} - <a href="{% url 'view_results' poll.id %}">View Results</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

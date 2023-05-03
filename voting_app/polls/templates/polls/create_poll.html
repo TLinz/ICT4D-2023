@@ -1,0 +1,23 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}Create Poll{% endblock %}
+
+{% block content %}
+    <h1>Create Poll</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="question">Question:</label>
+        <input type="text" name="question" id="question" required>
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" required>
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" required>
+        <br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" name="phone_number" id="phone_number" required>
+        <br>
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

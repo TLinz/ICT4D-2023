@@ -1,0 +1,9 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}View Results{% endblock %}
+
+{% block content %}
+    <h1>{{ poll.question }}</h1>
+    <p>Yes: {{ poll.yes_votes }}</p>
+    <p>No: {{ poll.no_votes }}</p>
+{% endblock %}
