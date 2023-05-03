@@ -25,7 +25,7 @@ EasyVote is a web-based application that allows users to create and manage polls
  
 2. Install the required packages:
 
-cd telephone-voting-app
+cd voting-app
 pip install -r requirements.txt
 
 3. Run the database migrations:
