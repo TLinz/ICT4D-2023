@@ -6,7 +6,7 @@ EasyVote is a web-based application that allows users to create and manage polls
 ## Features
 
 - User authentication: Users can log in with their credentials.
-- Poll management: Users can create, view, and delete polls.
+- Poll management: Users can create, view, and delete polls. Multiple polls can be managed.
 - Vote submission via phone calls: Users can call the provided phone number and vote using their phone's keypad.
 - Vote results: Users can view the poll results on the web interface, with real-time updates.
 
