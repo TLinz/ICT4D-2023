@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<vxml version="2.0">
+
+<!-- variables (shared between files in the system)-->
+<var name="poll"/>
+
+<!-- end event-->
+<catch event="end"> 
+	<disconnect/> 
+</catch>
+
+</vxml>

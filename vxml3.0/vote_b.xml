@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0">
+    <property name="inputmodes" value="dtmf"/> <!-- set input to DTMF-->
+
+    <param name="poll" value=""/>
+
+    <form id="vote_form">
+        <field name="vote_choice">
+            <prompt>
+                To vote for "YES", Press 1
+                <break time="1000"/>
+                To vote for "NO", Press 2
+                <break time="1000"/>
+                To return the previous page, please press 0.
+                <break time="500"/>
+                To end the call, Please press the asterisk key.
+            </prompt>
+            
+            <option dtmf="1" value="YES"></option>
+            <option dtmf="2" value="NO"></option>
+        </field>
+        
+        <filled>
+            <if cond="vote_choice == 'YES' || vote_choice == 'NO'">
+                <submit next="http://127.0.0.1:8000/submit_vote/?poll=" + poll method="post" namelist="vote_choice"/>
+                <prompt>Thanks for voting. You have voted for <value expr="vote_choice"/>. Bye.</prompt>
+                <exit/>
+            <elseif cond="vote_choice == '0'"/>
+                <goto next="http://webhosting.voxeo.net/208890/www/menu_f.xml"/>
+            <else/>
+                <prompt>Invalid choice. Please try again.</prompt>
+                <reprompt/>
+            </if>
+        </filled>
+    </form>
+</vxml>

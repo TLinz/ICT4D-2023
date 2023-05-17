@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0">
+    <!-- end event -->
+    <catch event="end"> 
+        <disconnect/> 
+    </catch>
+
+    <menu>
+        <property name="inputmodes" value="dtmf"/>
+        <prompt>
+            Welcome to Easy Vote!
+            <break time="500"/>
+            To vote, please press 1.
+            <break time="1000"/>
+            To return the previous page, please press 0.
+            <break time="1000"/>
+            To end the call, please press the asterisk key.
+
+        </prompt>
+        <choice dtmf="1" next="http://webhosting.voxeo.net/208890/www/select_poll_b.xml"/>
+        <choice dtmf="0" next="http://webhosting.voxeo.net/208890/www/main_menu.xml"/>
+        <choice dtmf="*" event="end"/>
+    </menu>
+    
+</vxml>

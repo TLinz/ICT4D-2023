@@ -1,0 +1,24 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0">
+    <!-- end event -->
+    <catch event="end">
+        <disconnect/>
+    </catch>
+    <menu>
+        <property name="inputmodes" value="voice"/>
+        <prompt>
+            Bienvenue à Easy Vote!
+            <break time="500"/>
+            Pour voter, dites "un".
+            <break time="1000"/>
+            Pour revenir à la page précédente, dites "zéro".
+            <break time="1000"/>
+            Pour mettre fin à l'appel, dites "étoile".
+
+        </prompt>
+        <choice dtmf="1" next="http://webhosting.voxeo.net/208890/www/select_poll_f.xml"/>
+        <choice dtmf="0" next="http://webhosting.voxeo.net/208890/www/main_menu.xml"/>
+        <choice dtmf="*" event="end"/>
+    </menu>
+</vxml>
