@@ -1,0 +1,28 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}View Results{% endblock %}
+
+{% block content %}
+    <h1>{{ poll.question }}</h1>
+    <div id="results">
+        <p>Yes: {{ poll.yes_votes }}</p>
+        <p>No: {{ poll.no_votes }}</p>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        function refreshData(){
+            var url = window.location.href;
+            $.get(url, function(data, status){
+                // data contains the HTML returned
+                // Find the results div and replace its content
+                $('#results').html($(data).find('#results').html());
+            });
+        }
+
+        // Run refreshData() every 5 seconds
+        setInterval(refreshData, 5000);
+    });
+    </script>
+{% endblock %}
