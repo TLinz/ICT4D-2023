@@ -3,6 +3,10 @@
 
 EasyVote is a web-based application that allows users to create and manage polls, and receive votes through phone calls using Voxeo's VoiceXML service.
 
+## Video Presentation
+
+Project Introduction YouTube Video Link: https://youtu.be/c32VAtC4gCQ
+
 ## Features
 
 - User authentication: Users can log in with their credentials.
